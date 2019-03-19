@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+		{% block content %}
+		<!-- Start Banner Area -->
+		<section class="banner-area relative">
+			<div class="overlay overlay-bg"></div>
+			<div class="container">
+				<div class="row fullscreen align-items-center justify-content-between">
+					<div class="col-lg-6 col-md-7 col-sm-8">
+						<div class="banner-content">
+							<h1>Face Recognition <br> </h1>
+							<p>
+							<ul class="unordered-list">
+							<li>Detect faces from picture</li>
+							 <li>Detect features from face</li> 
+							 <li>Compare any two person picture for finding whether they belong to same person or not</li>
+							 </ul>
+							 </p>
+							 <div class="row">
+								<div class="col-lg-4 col-md-4 col-sm-6 mb-1">	
+									<a href="{% url 'detect' %}" class="primary-btn">Detect<span class="lnr lnr-arrow-right"></span></a>
+									<br>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-6 mb-1">	
+									<a href="{% url 'features' %}" class="primary-btn">Features<span class="lnr lnr-arrow-right"></span></a>
+								</div>
+								<div class="col-lg-4 col-md-4 col-sm-6 mb-1">	
+									<a href="{% url 'compare' %}" class="primary-btn">Compare<span class="lnr lnr-arrow-right"></span></a>
+								</div>
+							 </div>
+						</div>
+					</div>
+					<div class="col-lg-5 col-md-5 col-sm-4">
+						<div class="row gallery-item">
+							<div class="col-md-6 mt-3">
+								<img src="{% static 'img/face01.jpg' %}" alt="" class="img-fluid indeximg" >
+							</div>
+							<div class="col-md-6 mt-3">
+								<img src="{% static 'img/tom-cruise.jpg' %}" alt="" class="img-fluid indeximg" >
+							</div>
+							<div class="col-md-6 mt-3">
+								<img src="{% static 'img/ums-pic1.jpg' %}" alt="" class="img-fluid indeximg">
+							</div>
+							<div class="col-md-6 mt-3">
+								<img src="{% static 'img/ums-pic2.jpg' %}" alt="" class="img-fluid indeximg">
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</section>
+		{% endblock %}
+		<!-- End Banner Area -->

@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+		{% block content %}
+		<!-- Start Banner Area -->
+		<section class="banner-area relative">
+			<div class="overlay overlay-bg"></div>
+			<div class="container">
+				<div class="row fullscreen align-items-center justify-content-between">
+					
+					<div class="col-lg-5 col-md-5 col-sm-4">
+						<div class="banner-content">
+							<h1>Face Compare</h1>
+							<h3>Compare any two face pictures to determine whether they belong to same person or not</h3>
+							
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-7 col-sm-8">
+
+						<form method="post" enctype="multipart/form-data">
+						 {% csrf_token %}
+						
+						<div class='row mt-3 ml-5'>
+
+							<div class="col-lg-6 col-md-6 col-sm-12">
+								{% if dflag == 'yes' or dflag == 'no' %}
+								<img src="{{imgURL1}}" id = "cmpImage1" alt="" class="img-fluid">
+								{% else %}
+								<img src="{% static 'img\ums-pic1.jpg' %}" id = "cmpImage1" alt="" class="img-fluid">
+								{% endif %}
+							</div>
+
+							<div class="col-lg-6 col-md-6 col-sm-12">
+								{% if dflag == 'yes' or dflag == 'no' %}
+								<img src="{{imgURL2}}" id = "cmpImage2" alt="" class="img-fluid">
+								{% else %}
+								<img src="{% static 'img\ums-pic2.jpg' %}" id = "cmpImage2" alt="" class="img-fluid">
+								{% endif %}
+							</div>
+
+						</div>	
+
+						<div class='row mt-3 ml-5'>
+							<div class="col-lg-6 col-md-6 col-sm-12">
+								<input type="file" name="fileToUpload1" id="fileToUpload1" accept="image/jpg, image/jpeg, image/png" onchange = "readURL(this, '#cmpImage1');" required>
+							</div>
+
+							<div class="col-lg-6 col-md-6 col-sm-12">
+								<input type="file" name="fileToUpload2" id="fileToUpload2" accept="image/jpg, image/jpeg, image/png" onchange = "readURL(this, '#cmpImage2');" required>
+							</div>
+
+						</div>
+							
+						<div class='row mt-3 mx-auto' style="width: 150px;">
+								<button type="submit" class="genric-btn primary circle">Compare</button>
+						</div>
+
+						</form>
+						
+						<div class='row mt-3 ml-5'>
+								{% if dflag == 'yes' %}
+								<h4 style = "color:green;"> Both images are of same person !!! </h4>
+								{% elif dflag == 'no' %}
+								<h4 class = "mx-auto" style = "color:red;"> No match !!! </h4>
+								{% else %}
+								{% endif %}
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+		</section>
+		{% endblock %}
+		<!-- End Banner Area -->
+
+		{% block js %}
+		<script>
+			function readURL(input, idt) {
+				if (input.files && input.files[0]) {
+					var reader = new FileReader();
+
+					reader.onload = function (e) {
+						$(idt)
+							.attr('src', e.target.result)
+							.width(240)
+							.height(220);
+					};
+
+					reader.readAsDataURL(input.files[0]);
+				}
+			}
+
+		</script>
+		{% endblock %}
