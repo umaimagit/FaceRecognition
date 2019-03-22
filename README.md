@@ -1,24 +1,24 @@
-# A Complete Beginner's Guide to Django
+# Face Recognition 
 
 [![Python Version](https://img.shields.io/badge/python-3.6-brightgreen.svg)](https://python.org)
-[![Django Version](https://img.shields.io/badge/django-1.11-brightgreen.svg)](https://djangoproject.com)
+[![Django Version](https://img.shields.io/badge/django-2.1-brightgreen.svg)](https://djangoproject.com)
 
-Code samples from the Django tutorial series.
+Face Recognition site in django which provide services like face detect, face features and comparing faces online.
 
-![Django Boards Screenshot](https://simpleisbetterthancomplex.com/media/series/beginners-guide/1.11/part-4/mainmenu.png)
+![Face Recognition Home Page](/screenshots/home.png)
 
 
-## Table of Contents
+## Features
 
-* [Part 1 - Getting Started](https://simpleisbetterthancomplex.com/series/2017/09/04/a-complete-beginners-guide-to-django-part-1.html)
-* [Part 2 - Fundamentals](https://simpleisbetterthancomplex.com/series/2017/09/11/a-complete-beginners-guide-to-django-part-2.html)
-* [Part 3 - Advanced Concepts](https://simpleisbetterthancomplex.com/series/2017/09/18/a-complete-beginners-guide-to-django-part-3.html)
-* [Part 4 - Authentication](https://simpleisbetterthancomplex.com/series/2017/09/25/a-complete-beginners-guide-to-django-part-4.html)
-* [Part 5 - ORM](https://simpleisbetterthancomplex.com/series/2017/10/02/a-complete-beginners-guide-to-django-part-5.html)
-* [Part 6 - Class-Based Views](https://simpleisbetterthancomplex.com/series/2017/10/09/a-complete-beginners-guide-to-django-part-6.html)
-* Part 7 - Deployment *comming soon*
+* [Detect human faces from picture if present]
+![Face Recognition Home Page](/screenshots/detect.png)
 
-For the complete tutorial series index [click here](https://simpleisbetterthancomplex.com/series/beginners-guide/1.11/).
+
+* [Detect faces features from picture if human face is present]
+![Face Recognition Home Page](/screenshots/features.png)
+
+* [Compare any faces pictures to check whether they belong to same person or not]
+![Face Recognition Home Page](/screenshots/compare.png)
 
 
 ## Running the Project Locally
@@ -26,7 +26,7 @@ For the complete tutorial series index [click here](https://simpleisbetterthanco
 First, clone the repository to your local machine:
 
 ```bash
-git clone git@github.com:sibtc/django-beginners-guide.git
+git clone git@github.com:umaimagit/FaceRecognition.git
 ```
 
 Install the requirements:
@@ -35,10 +35,12 @@ Install the requirements:
 pip install -r requirements.txt
 ```
 
-Create the database:
+Install dlib library:
+
+Copy dlib wheel file from "whl_file/dlib-19.8.1-cp36-cp36m-win_amd64.whl" and run below command
 
 ```bash
-python manage.py migrate
+pip install -r dlib-19.8.1-cp36-cp36m-win_amd64.whl
 ```
 
 Finally, run the development server:
@@ -55,6 +57,3 @@ The project will be available at **127.0.0.1:8000**.
 The source code is released under the [MIT License](https://github.com/sibtc/django-beginners-guide/blob/master/LICENSE).
 
 [![Creative Commons License](https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png)](http://creativecommons.org/licenses/by-nc-sa/3.0/)
-
-The tutorials, documentations, comics are licensed under the
-[Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License](https://creativecommons.org/licenses/by-nc-sa/3.0/).
